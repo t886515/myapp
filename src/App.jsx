@@ -1,37 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Home from "./home/Home.jsx";
+import AppBar from "./appbar/AppBar.jsx";
+import About from "./about/About.jsx";
+import { Routes, Route } from "react-router-dom";
+
+const routes = [
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+      <AppBar />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route path={route.path} element={route.element} />
+          ))}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Hello world!
-
-        This is so interesting.
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
