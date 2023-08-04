@@ -48,8 +48,12 @@ const links = [
     to: "/about",
   },
   {
-    name: "Journal",
-    to: "/journal",
+    name: "Resume",
+    to: "/resume",
+  },
+  {
+    name: "Projects",
+    to: "/projects",
   },
   {
     name: "Contact",
