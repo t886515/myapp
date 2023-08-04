@@ -45,36 +45,30 @@ const IconLink = style(Link)`
 const links = [
   {
     name: "About",
-    icon: "",
     to: "/about",
   },
   {
     name: "Journal",
-    icon: "",
     to: "/journal",
   },
   {
     name: "Contact",
-    icon: "",
     to: "/contact",
   },
 ];
 
 function AppBar() {
   return (
-    <div>
-      jfdklsafjdklsajfdlks
-      <NavBarWrapper>
-        <InitialLinkWrapper to="/">L . Y .</InitialLinkWrapper>
-        <HomeNavLinks>
-          {links.map(link => (
-            <IconLink to={link.to} key={link.name}>
-              {link.name}
-            </IconLink>
-          ))}
-        </HomeNavLinks>
-      </NavBarWrapper>
-    </div>
+    <NavBarWrapper>
+      <InitialLinkWrapper to="/">L . Y .</InitialLinkWrapper>
+      <HomeNavLinks>
+        {links.map(link => (
+          <IconLink to={link.to} key={link.name}>
+            {link.name}
+          </IconLink>
+        ))}
+      </HomeNavLinks>
+    </NavBarWrapper>
   );
 }
 
